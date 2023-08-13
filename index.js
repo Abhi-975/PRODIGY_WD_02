@@ -3,20 +3,24 @@ var min=0;
 var sec=0;
 var cnt=0;
 
+let music = new Audio("./stopwatch.mp3");
+
 var timer = false;
 
 function start(){
     timer=true;
     stopwatch();
+    music.play();
 }
 
 function stop(){
     timer=false;
+    music.pause();
 }
 
 function reset(){
     timer=false;
-    
+    music.pause();
     hr=0;
     min=0;
     sec=0;
